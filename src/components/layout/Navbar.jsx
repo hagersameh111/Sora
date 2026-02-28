@@ -1,4 +1,4 @@
-import { branding } from "../../config/branding"
+import { brand } from "../../config/brand"
 import { useState } from "react"
 
 const Navbar = () => {
@@ -12,13 +12,20 @@ const Navbar = () => {
 
         {/* LEFT */}
         <div className="flex items-center gap-2">
-          <img
-            src={branding.logo}
-            alt={branding.name}
-            className="h-10"
-          />
+          {brand.logo.type === "image" ? (
+            <img
+              src={brand.logo.value}
+              alt={brand.name}
+              className="h-10"
+            />
+          ) : (
+            <span className="text-xl font-bold">
+              {brand.logo.value}
+            </span>
+          )}
+
           <span className="font-semibold text-lg">
-            {branding.name}
+            {brand.name}
           </span>
         </div>
 
@@ -33,15 +40,15 @@ const Navbar = () => {
             <a href="#contact">Contact</a>
           </div>
 
-          {/* Book Now (always visible) */}
+          {/* Book Now */}
           <a
-            href={`https://wa.me/${branding.whatsapp}`}
+            href={`https://wa.me/${brand.contact.whatsapp}`}
             className="bg-[var(--color-primary)] text-white px-4 py-2 rounded-full text-sm"
           >
             Book Now
           </a>
 
-          {/* Hamburger (mobile only) */}
+          {/* Hamburger */}
           <button
             className="md:hidden text-2xl"
             onClick={() => setIsOpen(!isOpen)}

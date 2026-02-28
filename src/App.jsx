@@ -1,16 +1,16 @@
 import Navbar from "./components/layout/Navbar"
-import { theme } from "./config/theme"
+import { brand } from "./config/brand"
 
 function App() {
   return (
     <div
       style={{
-        "--color-primary": theme.colors.primary,
-        "--color-primary-soft": theme.colors.primarySoft,
-        "--color-navbar": theme.colors.navbarBg,
-        "--color-background": theme.colors.background,
-        "--color-text-main": theme.colors.textMain,
-        "--color-text-dark": theme.colors.textDark,
+        "--color-primary": brand.theme.colors.primary,
+        "--color-primary-soft": brand.theme.colors.primarySoft,
+        "--color-navbar": brand.theme.colors.navbarBg,
+        "--color-background": brand.theme.colors.background,
+        "--color-text-main": brand.theme.colors.textMain,
+        "--color-text-dark": brand.theme.colors.textDark,
       }}
       className="min-h-screen bg-[var(--color-background)]"
     >

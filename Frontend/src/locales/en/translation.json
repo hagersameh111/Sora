@@ -1,0 +1,204 @@
+{
+  "nav": {
+    "home": "HOME",
+    "services": "SERVICES",
+    "policies": "POLICIES",
+    "book": "Book Now"
+  },
+
+  "hero": {
+    "title": "EMBRACE YOUR\nNATURAL BEAUTY",
+    "description": "Experience luxury beauty treatments in a serene, feminine sanctuary — hijab-friendly, all-female staffed, and completely camera-free.",
+    "button": "Book your Facial"
+  },
+
+  "whyChoose": {
+    "title": "Why Choose SŌRA?",
+    "subtitle": "A personalized skincare experience focused on real, lasting results.",
+    "features": {
+      "hijabFriendly": {
+        "title": "Hijab-Friendly",
+        "desc": "Only female staff and no CCTV for your privacy"
+      },
+      "customized": {
+        "title": "Customized Treatments",
+        "desc": "Every facial is tailored to your unique skin needs and goals."
+      },
+      "medicalGrade": {
+        "title": "Medical-Grade Products",
+        "desc": "We use professional skincare for safe and visible results."
+      },
+      "privateStudio": {
+        "title": "Relaxing Private Studio",
+        "desc": "A calm, cozy space designed for comfort and self-care."
+      },
+      "resultsDriven": {
+        "title": "Results-Driven Approach",
+        "desc": "Focused on long-term skin health, not quick fixes."
+      }
+    }
+  },
+
+  "visit": {
+    "title": "Visit Us",
+    "locationLabel": "Location",
+    "address": [
+      "180 Old Loudon Road",
+      "Latham, NY 12110",
+      "United States"
+    ],
+    "contacts": {
+      "reservation": {
+        "title": "Only By Reservation",
+        "value": ""
+      },
+      "email": {
+        "title": "Email",
+        "value": "Sora.aesthetics@gmail.com"
+      },
+      "instagram": {
+        "title": "Instagram",
+        "value": "@Soraaesthetics_"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "value": "+22 123 456 7890"
+      }
+    },
+    "button": "Send NOW!"
+  },
+  "policies": {
+  "line1": "Consistency is key for best results",
+  "line2": "Results vary based on skin type and consistency",
+  "line3": "Consultation form required prior to service",
+  "button": "Read Full Policies"
+},
+"services": {
+  "bestFor": "Best for:",
+
+  "1": {
+    "title": "HydraSilk Facial",
+    "desc": "A deeply nourishing treatment designed to replenish moisture, restore the skin barrier, and leave the skin soft, plump, and luminous.",
+    "bestFor": ["Dry skin", "Dehydrated skin", "Dull or tight skin"],
+    "duration": "60 min",
+    "price": "$90"
+  },
+
+  "2": {
+    "title": "Pure Balance Facial",
+    "desc": "A refining facial focused on regulating oil production, clearing congestion, and rebalancing the skin without over-stripping.",
+    "bestFor": ["Oily skin", "Combination", "Congested skin types"],
+    "duration": "60 min",
+    "price": "$90"
+  },
+
+  "3": {
+    "title": "The Signature SORA Facial",
+    "desc": "A luxury customized treatment tailored to your skin’s unique needs, combining hydration, correction, and glow-enhancing techniques.",
+    "bestFor": ["All skin types", "First-time clients", "Skin maintenance"],
+    "duration": "60 min",
+    "price": "$90"
+  },
+
+  "4": {
+    "title": "Acne Restoration Facial",
+    "desc": "A corrective treatment designed for ongoing acne management, targeting active breakouts, inflammation and post-acne marks.",
+    "duration": "60 min",
+    "price": "$90",
+    "badge": {
+      "text": "Not available for first-time clients",
+      "icon": "🚫"
+    },
+    "restrictions": [
+      "This facial is available to returning clients only",
+      "New clients must first book a Custom Facial before this treatment can be scheduled"
+    ]
+  },
+
+  "5": {
+    "title": "Full Face Wax",
+    "desc": "A gentle waxing service to remove facial hair while maintaining skin comfort and smoothness.",
+    "duration": "30 min",
+    "price": "$45"
+  },
+
+  "6": {
+    "title": "Eyebrow Shaping",
+    "desc": "Precision eyebrow waxing to enhance your natural shape and frame your features.",
+    "duration": "20 min",
+    "price": "$25"
+  }
+}
+,
+"about": {
+  "title": "About SŌRA Aesthetics",
+  "paragraphs": [
+    "SŌRA Aesthetics is a female-owned, results-driven skincare studio based in the Capital Region of New York, created as a space where skin health, intention, and self-care meet.",
+    "I specialize in customized facials that address acne, hyperpigmentation, uneven texture, and dull skin, while prioritizing barrier health and long-term results.",
+    "My approach blends advanced skincare techniques with education and presence, allowing each treatment to feel purposeful and restorative so clients not only see results, but leave feeling cared for, confident, and connected to their skin."
+  ]
+},
+"addons": {
+  "title": "Add-Ons",
+  "button": "Add Now",
+
+  "1": {
+    "title": "Dermaplaning",
+    "desc": "Gently removes dead skin and peach fuzz to reveal smoother, brighter skin and allow products to penetrate more effectively.",
+    "duration": "60 min",
+    "price": "$15"
+  },
+
+  "2": {
+    "title": "Red LED Light Therapy",
+    "desc": "Helps calm inflammation, promote healing, and support collagen production. Ideal for acne, sensitivity, and post-treatment recovery.",
+    "duration": "60 min",
+    "price": "$15"
+  }
+},
+"reviews": {
+  "title": "CUSTOMERS\nREVIEWS",
+  "subtitle": "See what our customers think about our services",
+
+  "1": {
+    "name": "Aigars Silkans",
+    "text": "This is my first time getting a facial and Shaima did not disappoint! Her energy was amazing.",
+    "rating": 3
+  },
+
+  "2": {
+    "name": "Maria Johnson",
+    "text": "Absolutely loved the experience! The environment was calming and the results were visible immediately.",
+    "rating": 5
+  },
+
+  "3": {
+    "name": "Lina Ahmed",
+    "text": "Professional, clean, and so relaxing. I will definitely book again!",
+    "rating": 4
+  }
+},
+"trust": {
+  "1": "Hijab-friendly & private environment",
+  "2": "No CCTV – Full Privacy",
+  "3": "Women-Only Studio",
+  "4": "Private & Secure Space",
+  "5": "Personalized Care"
+},
+"gallery": {
+  "title": "Gallery",
+  "viewMore": "View more on Instagram",
+  "instagramUrl": "https://instagram.com/"
+},
+"servicesSection": {
+  "title": "Our Services",
+  "subtitle": "Choose the perfect treatment for your skin",
+  "buttonPrimary": "Book Now",
+  "buttonSecondary": "View All Services"
+},
+"servicesTabs": {
+  "title": "My Services",
+  "skincare": "SkinCare",
+  "waxing": "Waxing"
+}
+}

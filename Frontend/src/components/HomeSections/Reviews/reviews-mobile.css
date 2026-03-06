@@ -1,0 +1,58 @@
+/* MOBILE IMAGE WITH OVERLAY CARDS */
+
+@media (max-width:1024px){
+
+  .reviews-mobile-wrapper{
+    position:relative;
+    width:100%;
+    max-width:none;
+    margin:0;
+  }
+
+  .reviews-mobile-bg{
+    width:100%;
+    height:clamp(420px,70svh,620px);
+    object-fit:cover;
+    border-radius:30px;
+  }
+
+  .reviews-mobile-overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    /* slimmer overlay */
+    gap:14px;
+    padding:10px 0;
+
+    /* edge to edge */
+    width:100%;
+  }
+
+  /* slimmer review cards */
+  .review-card{
+    width:100%;
+    max-width:none;
+    padding:12px 14px;
+  }
+
+  /* MOBILE TYPOGRAPHY */
+  .review-card h1,
+  .review-card h2,
+  .review-card h3,
+  .review-card h4,
+  .review-card h5,
+  .review-card h6{
+    font-size:16px !important;
+  }
+
+  .review-card p,
+  .review-card span,
+  .review-card small,
+  .review-card li{
+    font-size:12px !important;
+  }
+
+}

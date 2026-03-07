@@ -1,0 +1,126 @@
+/* -------------------- */
+/* DESKTOP (UNCHANGED)  */
+/* -------------------- */
+
+.whychoose-images > div:nth-child(1) img{
+  transform: translateY(0);
+}
+
+.whychoose-images > div:nth-child(2) img{
+  transform: translateY(-200px);
+}
+
+.whychoose-images > div:nth-child(3) img{
+  transform: translateY(-400px);
+}
+
+
+/* -------------------- */
+/* MOBILE LAYOUT        */
+/* -------------------- */
+
+@media (max-width:768px){
+
+  .whychoose-layout{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+  }
+
+  .whychoose-images{
+    order:3;
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin-top:16px;
+  }
+
+  .whychoose-img{
+    width:132.75px;
+    height:120px !important;
+    border-radius:18px;
+    overflow:hidden;
+
+    background-image:url("/why-full.jpg");
+    background-size:350% 300%;
+    background-repeat:no-repeat;
+  }
+
+  /* hide original image on mobile */
+  .whychoose-img img{
+    display:none;
+  }
+
+  /* left slice */
+  .whychoose-images > div:nth-child(1){
+    background-position:0% center;
+  }
+
+  /* middle slice */
+  .whychoose-images > div:nth-child(2){
+    background-position:50% center;
+  }
+
+  /* right slice */
+  .whychoose-images > div:nth-child(3){
+    background-position:100% center;
+  }
+
+  /* MOBILE TYPOGRAPHY */
+
+  .whychoose-layout h1,
+  .whychoose-layout h2,
+  .whychoose-layout h3,
+  .whychoose-layout h4,
+  .whychoose-layout h5,
+  .whychoose-layout h6{
+    font-size:16px !important;
+  }
+
+  .whychoose-layout p,
+  .whychoose-layout span,
+  .whychoose-layout small,
+  .whychoose-layout li{
+    font-size:12px !important;
+  }
+
+  /* tighten title/subtitle and subtitle-to-content spacing on mobile */
+  .whychoose-content h2 + p{
+    margin-top:4px !important;
+    line-height:1.35;
+  }
+
+  .whychoose-content .whychoose-features{
+    margin-top:0 !important;
+  }
+
+}
+
+
+/* VERY SMALL PHONES */
+
+@media (max-width:420px){
+
+  .whychoose-img{
+    width:122px;
+    height:140px !important;
+  }
+
+}
+/* TITLE SIZE CONTROL */
+
+.whychoose-content h1,
+.whychoose-content h2{
+  font-size:60px;
+}
+
+/* SMALL PHONES */
+
+@media (max-width:768px){
+
+  .whychoose-content h1,
+  .whychoose-content h2{
+    font-size:26px !important;
+  }
+
+}

@@ -121,7 +121,7 @@ current===index ? "bg-white" : "opacity-50"
 
 
 {/* SOCIAL */}
-<div className="absolute bottom-11 md:bottom-2 left-[80%] transform -translate-x-1/2 w-[140px] md:w-[250px] flex justify-center gap-2 [direction:ltr] ">
+<div className="absolute bottom-17 md:bottom-2 left-[80%] transform -translate-x-1/2 w-[140px] md:w-[250px] flex justify-center gap-2 [direction:ltr] ">
 
 <a
 href="https://www.instagram.com/soraaesthetics_"

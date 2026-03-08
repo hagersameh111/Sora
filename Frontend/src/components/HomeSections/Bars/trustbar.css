@@ -40,12 +40,12 @@
   .trustbar-inner{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:18px 24px;
+    gap:14px 14px;
     justify-items:start;
   }
 
   .trust-item{
-    font-size:12px;
+    font-size:10px;
   }
 
   .trust-item h1,
@@ -54,14 +54,14 @@
   .trust-item h4,
   .trust-item h5,
   .trust-item h6{
-    font-size:16px !important;
+    font-size:10px !important;
   }
 
   .trust-item p,
   .trust-item span,
   .trust-item small,
   .trust-item li{
-    font-size:12px !important;
+    font-size:10px !important;
   }
 
   /* last item centered */

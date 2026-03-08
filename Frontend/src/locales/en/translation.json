@@ -43,8 +43,7 @@
     "title": "Visit Us",
     "locationLabel": "Location",
     "address": [
-      "180 Old Loudon Road",
-      "Latham, NY 12110",
+      "180 Old Loudon Road, Latham, NY 12110",
       "United States"
     ],
     "contacts": {
@@ -59,10 +58,6 @@
       "instagram": {
         "title": "Instagram",
         "value": "@Soraaesthetics_"
-      },
-      "whatsapp": {
-        "title": "WhatsApp",
-        "value": "+22 123 456 7890"
       }
     },
     "button": "Book Now"
@@ -106,7 +101,7 @@
     "duration": "60 min",
     "price": "$90",
     "badge": {
-      "text": "Not available for first-time clients",
+      "text": "Not for first-time clients",
       "icon": "🚫"
     },
     "restrictions": [
@@ -116,15 +111,15 @@
   },
 
   "5": {
-    "title": "Full Face Wax",
-    "desc": "A gentle waxing service to remove facial hair while maintaining skin comfort and smoothness.",
+    "title": "Face Wax",
+    "desc": "Offering full face waxing:\nBrow Wax — $13\nLip Wax — $10\nChin Wax — $10",
     "duration": "30 min",
     "price": "$45"
   },
 
   "6": {
-    "title": "Eyebrow Shaping",
-    "desc": "Precision eyebrow waxing to enhance your natural shape and frame your features.",
+    "title": "Body Wax",
+    "desc": "Offering full body:\nUnderarm Wax — $25\nHalf Arm — $30\nFull Arm — $40\nHalf Leg — $35\nFull Leg — $50",
     "duration": "20 min",
     "price": "$25"
   }

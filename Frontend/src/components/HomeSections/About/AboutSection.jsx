@@ -35,9 +35,9 @@ const AboutSection = () => {
           <div
             className={`
               relative bg-white
-              p-6 sm:p-10 md:p-14 lg:p-20
+              p-6  sm:p-10 md:p-14 lg:p-10
               shadow-lg rounded-[20px] sm:rounded-[24px]
-              z-10
+              z-10 left-0 lg:left-[-20%]
               ${isRTL ? "lg:-mr-24 text-start" : "lg:-ml-24"}
             `}
           >

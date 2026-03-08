@@ -28,20 +28,20 @@ const Hero = () => {
     <>
     
       {/* MOBILE HERO */}
-      <section className="lg:hidden">
+      <section className="lg:hidden h-[100svh]">
         <MobileHero />
       </section>
 
 
       {/* DESKTOP HERO */}
-      <section className={`hidden lg:block relative bg-[var(--color-bg-main)] overflow-hidden ${isRTL ? "hero-force-ltr" : ""}`}>
+      <section className={`hidden lg:block h-[100svh] relative bg-[var(--color-bg-main)] overflow-hidden ${isRTL ? "hero-force-ltr" : ""}`}>
 
         <div
           className="absolute inset-0 bg-repeat bg-[length:511px] opacity-[1] pointer-events-none"
           style={{ backgroundImage: "url('/overlay.svg')" }}
         />
 
-        <div className="relative z-10 px-4 sm:px-6 lg:px-8 pt-[80px] sm:pt-[120px] lg:pt-[140px] pb-[80px] sm:pb-[100px] lg:pb-[130px]">
+        <div className="relative z-10 h-full px-4 sm:px-6 lg:px-8 flex items-center">
 
           <Container>
 
@@ -50,7 +50,7 @@ const Hero = () => {
               {/* TEXT */}
               <div className={`max-w-[800px] text-center lg:text-left mx-auto lg:mx-0 ${isRTL ? "hero-ar" : ""}`}>
 
-                <h1 className="font-semibold text-3xl sm:text-5xl md:text-6xl lg:text-[92px] leading-[1.05] text-[var(--color-accent)] whitespace-pre-line mb-[24px] sm:mb-[32px]">
+                <h1 className="font-semibold text-3xl sm:text-3xl md:text-4xl lg:text-[72px] leading-[1.05] text-[var(--color-accent)] whitespace-pre-line mb-[24px] sm:mb-[32px]">
                   {t("hero.title")}
                 </h1>
 

@@ -12,9 +12,7 @@ export const brand = {
     copyright: "© 2026 SŌRA Aesthetics. All rights reserved.",
   },
 
-  contact: {
-    whatsapp: "201000000000",
-  },
+ 
 
   data: {
     visit: {
@@ -23,7 +21,6 @@ export const brand = {
         { id: "reservation", icon: "/calendar-clock.svg" },
         { id: "email", icon: "/email.svg" },
         { id: "instagram", icon: "/insta.svg" },
-        { id: "whatsapp", icon: "/whatsapp.svg" },
       ],
     },
 

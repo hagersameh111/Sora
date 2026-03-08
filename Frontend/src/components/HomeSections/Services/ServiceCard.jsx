@@ -61,7 +61,19 @@ const ServiceCard = ({ service }) => {
           <h3 className="text-[16px] lg:text-3xl font-semibold mb-4">{title}</h3>
 
           <p className="text-[12px] lg:text-sm leading-relaxed mb-4">
-            {description}
+            {description.split("\n").map((line, lineIndex) => (
+              <span key={lineIndex} className="block">
+                {line.split(/(\$\d+)/g).map((part, partIndex) =>
+                  /^\$\d+$/.test(part) ? (
+                    <span key={partIndex} className="text-[#FFA1AD] font-semibold">
+                      {part}
+                    </span>
+                  ) : (
+                    <span key={partIndex}>{part}</span>
+                  )
+                )}
+              </span>
+            ))}
           </p>
 
           {badgeText && badgeText !== `services.${service.id}.badge.text` && (
@@ -96,11 +108,13 @@ const ServiceCard = ({ service }) => {
         </div>
 
         {/* FOOTER */}
-        <div className="flex items-center justify-between mt-6">
-          <span className="text-[12px] lg:text-sm">
-            {duration} •{" "}
-            <span className="text-[#FFA1AD] font-semibold">{price}</span>
-          </span>
+        <div className={`flex items-center mt-6 ${service.category === "waxing" ? "justify-end" : "justify-between"}`}>
+          {service.category !== "waxing" && (
+            <span className="text-[12px] lg:text-sm">
+              {duration} •{" "}
+              <span className="text-[#FFA1AD] font-semibold">{price}</span>
+            </span>
+          )}
 
           <a
             href="https://visibook.com/soraaesthetics"

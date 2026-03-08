@@ -43,7 +43,7 @@ const VisitSection = () => {
           {/* LEFT SIDE */}
           <div>
 
-            <div className="flex items-start gap-4 mb-6 sm:mb-8">
+            <div className="flex items-start gap-4 mb-6 sm:mb-6">
               <img src="/location.svg" className="w-6 h-6 sm:w-7 sm:h-7 mt-1" />
 
               <div>
@@ -81,7 +81,7 @@ const VisitSection = () => {
           </div>
 
           {/* RIGHT SIDE */}
-          <div className="flex flex-col gap-8 sm:gap-10 lg:gap-12 pt-0 lg:pt-10">
+          <div className="flex flex-col gap-8 sm:gap-10 lg:gap-12 pt-0 lg:pt-30">
 
             {visitData.contacts.map((item) => (
               <div key={item.id} className="flex items-start gap-4 sm:gap-5">
@@ -93,20 +93,9 @@ const VisitSection = () => {
                     {t(`visit.contacts.${item.id}.title`)}
                   </h4>
 
-                  {item.id === "whatsapp" ? (
-                    <a
-                      href={`https://wa.me/${brand.contact.whatsapp}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm sm:text-base lg:text-[18px] mt-1 sm:mt-2 inline-block underline"
-                    >
-                      {t(`visit.contacts.${item.id}.value`)}
-                    </a>
-                  ) : (
-                    <p className="text-sm sm:text-base lg:text-[18px] mt-1 sm:mt-2">
-                      {t(`visit.contacts.${item.id}.value`)}
-                    </p>
-                  )}
+                  <p className="text-sm sm:text-base lg:text-[18px] mt-1 sm:mt-2">
+                    {t(`visit.contacts.${item.id}.value`)}
+                  </p>
                 </div>
 
               </div>

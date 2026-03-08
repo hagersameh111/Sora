@@ -21,7 +21,7 @@ const MobileHero = () => {
 
   return (
 
-<section className={`relative bg-[var(--color-bg-main)] overflow-hidden ${isRTL ? "[direction:ltr]" : ""}`}>
+<section className={`relative h-full bg-[var(--color-bg-main)] overflow-hidden ${isRTL ? "[direction:ltr]" : ""}`}>
 
 {/* pattern */}
 <div
@@ -29,7 +29,7 @@ className="absolute inset-0 bg-repeat bg-[length:511px] pointer-events-none"
 style={{ backgroundImage: "url('/overlay.svg')" }}
 />
 
-<div className="relative z-10 max-w-[393px] md:max-w-[760px] mx-auto px-4 md:px-8 pt-[95px] md:pt-[110px] pb-[40px] md:pb-[50px]">
+<div className="relative z-10 h-full max-w-[393px] md:max-w-[760px] mx-auto px-4 md:px-8 flex items-center">
 
 {/* TOP GRID */}
 <div className="grid grid-cols-[1fr_180px] md:grid-cols-[1fr_300px] gap-8 md:gap-15 items-center">

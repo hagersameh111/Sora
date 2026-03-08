@@ -21,15 +21,15 @@ const MobileHero = () => {
 
   return (
 
-<section className={`relative h-full bg-[var(--color-bg-main)] overflow-hidden ${isRTL ? "[direction:ltr]" : ""}`}>
+<section className={`relative  h-fit  bg-[var(--color-bg-main)] overflow-hidden ${isRTL ? "[direction:ltr]" : ""}`}>
 
 {/* pattern */}
 <div
-className="absolute inset-0 bg-repeat bg-[length:511px] pointer-events-none"
+className="absolute inset-0 bg-repeat bg-[length:511px] pointer-events-none "
 style={{ backgroundImage: "url('/overlay.svg')" }}
 />
 
-<div className="relative z-10 h-full max-w-[393px] md:max-w-[760px] mx-auto px-4 md:px-8 flex items-center">
+<div className="relative z-10 h-full max-w-[393px] md:max-w-[760px] mx-auto px-4 md:px-8 flex items-start md:items-center pt-8 md:pt-8 pb-6">
 
 {/* TOP GRID */}
 <div className="grid grid-cols-[1fr_180px] md:grid-cols-[1fr_300px] gap-8 md:gap-15 items-center">
@@ -121,7 +121,7 @@ current===index ? "bg-white" : "opacity-50"
 
 
 {/* SOCIAL */}
-<div className="absolute bottom-17 md:bottom-2 left-[80%] transform -translate-x-1/2 w-[140px] md:w-[250px] flex justify-center gap-2 [direction:ltr] ">
+<div className="absolute bottom-8 md:bottom-2 left-[80%] transform -translate-x-1/2 w-[140px] md:w-[250px] flex justify-center gap-2 [direction:ltr] ">
 
 <a
 href="https://www.instagram.com/soraaesthetics_"

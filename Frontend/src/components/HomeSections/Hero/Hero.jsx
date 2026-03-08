@@ -28,13 +28,13 @@ const Hero = () => {
     <>
     
       {/* MOBILE HERO */}
-      <section className="lg:hidden h-[100svh]">
+      <section className="lg:hidden h-fit">
         <MobileHero />
       </section>
 
 
       {/* DESKTOP HERO */}
-      <section className={`hidden lg:block h-[100svh] relative bg-[var(--color-bg-main)] overflow-hidden ${isRTL ? "hero-force-ltr" : ""}`}>
+      <section className={`hidden lg:block h-fit p-17 relative bg-[var(--color-bg-main)] overflow-hidden ${isRTL ? "hero-force-ltr" : ""}`}>
 
         <div
           className="absolute inset-0 bg-repeat bg-[length:511px] opacity-[1] pointer-events-none"
@@ -45,10 +45,10 @@ const Hero = () => {
 
           <Container>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-6 items-center lg:items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-6  md:gap-5 items-center lg:items-start">
 
               {/* TEXT */}
-              <div className={`max-w-[800px] text-center lg:text-left mx-auto lg:mx-0 ${isRTL ? "hero-ar" : ""}`}>
+              <div className={`max-w-[800px] text-center  lg:text-left mx-auto lg:mx-0 ${isRTL ? "hero-ar" : ""}`}>
 
                 <h1 className="font-semibold text-3xl sm:text-3xl md:text-4xl lg:text-[72px] leading-[1.05] text-[var(--color-accent)] whitespace-pre-line mb-[24px] sm:mb-[32px]">
                   {t("hero.title")}
@@ -90,7 +90,7 @@ const Hero = () => {
 
 
               {/* RIGHT IMAGE SECTION */}
-              <div className="relative flex justify-center lg:justify-end mt-[30px] [direction:ltr]">
+              <div className="relative flex justify-center lg:justify-end mt-[-4px] [direction:ltr]">
 
                 <div className="relative w-[260px] sm:w-[350px] md:w-[520px] lg:w-[420px]">
 
@@ -146,7 +146,7 @@ const Hero = () => {
                   </div>
 
                   {/* SOCIAL */}
-                  <div className="mt-[4px] w-[120px] sm:w-[300px] md:w-[380px] ml-auto flex justify-center gap-2">
+                  <div className="mt-[4px] w-[70px] sm:w-[300px] md:w-[380px] ml-auto flex justify-center gap-2">
 
                     <a
                       href="https://www.instagram.com/soraaesthetics_"

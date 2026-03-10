@@ -3,7 +3,9 @@ import { motion } from "framer-motion"
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
 
-const Hero = lazy(() => import("../components/HomeSections/Hero/Hero"))
+const HeroImport = () => import("../components/HomeSections/Hero/Hero")
+const Hero = lazy(HeroImport)
+
 const TrustBar = lazy(() => import("../components/HomeSections/Bars/TrustBar"))
 const WhyChoose = lazy(() => import("../components/HomeSections/WhyChooseUs/WhyChoose"))
 const Services = lazy(() => import("../components/HomeSections/Services/Servicepage"))
@@ -25,38 +27,49 @@ const AnimatedSection = ({ children, delay = 0 }) => (
 
 const Home = () => {
   return (
-    <div>
-    <Navbar />
-      <Suspense fallback={null}>
-        <div id="hero">
-          <AnimatedSection>
-            <Hero />
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+
+      <main className="flex-1">
+        <Suspense fallback={<div className="min-h-[60vh]" />}>
+          <div id="hero">
+            <AnimatedSection>
+              <Hero />
+            </AnimatedSection>
+          </div>
+
+          <AnimatedSection delay={0.03}>
+            <TrustBar />
           </AnimatedSection>
-        </div>
-        <AnimatedSection delay={0.03}>
-          <TrustBar />
-        </AnimatedSection>
-        <AnimatedSection delay={0.05}>
-          <WhyChoose />
-        </AnimatedSection>
-        <div id="services">
-          <AnimatedSection delay={0.07}>
-            <Services />
+
+          <AnimatedSection delay={0.05}>
+            <WhyChoose />
           </AnimatedSection>
-        </div>
-        <AnimatedSection delay={0.09}>
-          <GallerySection />
-        </AnimatedSection>
-        <AnimatedSection delay={0.11}>
-          <AboutSection />
-        </AnimatedSection>
-        <AnimatedSection delay={0.13}>
-          <Reviews />
-        </AnimatedSection>
-        <AnimatedSection delay={0.15}>
-          <VisitSection />
-        </AnimatedSection>
-      </Suspense>
+
+          <div id="services">
+            <AnimatedSection delay={0.07}>
+              <Services />
+            </AnimatedSection>
+          </div>
+
+          <AnimatedSection delay={0.09}>
+            <GallerySection />
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.11}>
+            <AboutSection />
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.13}>
+            <Reviews />
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.15}>
+            <VisitSection />
+          </AnimatedSection>
+        </Suspense>
+      </main>
+
       <Footer />
     </div>
   )

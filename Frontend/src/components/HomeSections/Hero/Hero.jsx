@@ -34,15 +34,17 @@ const Hero = () => {
           style={{ backgroundImage: "url('/overlay.svg')" }}
         />
 
-        <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-10 lg:py-14 xl:py-16">
+        <div className="relative z-10 px-4 sm:px-6 lg:px-6 py-10 lg:py-8 xl:py-12">
           <Container>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-14 items-center">
+
+              {/* LEFT TEXT */}
               <div
-                className={`max-w-[760px] text-center lg:text-left mx-auto lg:mx-0 ${
+                className={`max-w-[760px] text-center ${isRTL ? "lg:text-right" : "lg:text-left"} mx-auto lg:mx-0 ${
                   isRTL ? "hero-ar" : ""
                 }`}
               >
-                <h1 className="font-semibold text-4xl lg:text-[56px] xl:text-[68px] leading-[1.05] text-[var(--color-accent)] whitespace-pre-line mb-6">
+                <h1 className="font-semibold text-4xl lg:text-[56px] xl:text-[68px] leading-[1.05] text-[var(--color-accent)] whitespace-pre-line mb-4">
                   {t("hero.title")}
                 </h1>
 
@@ -73,18 +75,24 @@ const Hero = () => {
                 </div>
               </div>
 
+              {/* RIGHT IMAGES */}
               <div className="relative flex justify-center lg:justify-end [direction:ltr]">
                 <div className="relative w-[300px] xl:w-[420px]">
+
                   <div className="relative h-[360px] xl:h-[483px]">
+
+                    {/* MAIN IMAGE */}
                     <div className="absolute right-0 top-0 w-[240px] h-[320px] xl:w-[380px] xl:h-[483px] rounded-[40px] xl:rounded-[50px] overflow-hidden">
                       <img
                         key={heroSlides[current].main}
                         src={heroSlides[current].main}
+                        loading="eager"
                         alt=""
                         className="w-full h-full object-cover transition-all duration-500 ease-in-out opacity-100 animate-fadeIn"
                       />
                     </div>
 
+                    {/* SECONDARY IMAGE */}
                     <div className="absolute -left-[30px] top-[24px] xl:-left-[100px] xl:top-[53px] w-[170px] h-[220px] xl:w-[268px] xl:h-[335px] rounded-[30px] xl:rounded-[40px] overflow-hidden shadow-xl">
                       <img
                         key={`${current}-secondary`}
@@ -94,6 +102,7 @@ const Hero = () => {
                       />
                     </div>
 
+                    {/* DOTS */}
                     <div className="hero-dots">
                       {heroSlides.map((_, index) => (
                         <div
@@ -110,9 +119,11 @@ const Hero = () => {
                         />
                       ))}
                     </div>
+
                   </div>
 
-                  <div className="mt-[2px] w-[240px] xl:w-[380px] ml-auto flex justify-center gap-2">
+                  {/* SOCIAL */}
+                  <div className="mt-[5px] w-[240px] xl:w-[380px] ml-auto flex justify-center gap-2">
                     <a
                       href="https://www.instagram.com/soraaesthetics_"
                       target="_blank"
@@ -129,8 +140,10 @@ const Hero = () => {
                       <img src="/face-icon.svg" className="hero-social" />
                     </a>
                   </div>
+
                 </div>
               </div>
+
             </div>
           </Container>
         </div>

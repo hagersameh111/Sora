@@ -1,6 +1,6 @@
 const Section = ({ children, className = "" }) => {
   return (
-    <section className={`py-24 md:py-32 ${className}`}>
+    <section className={`py-20 md:py-30 ${className}`}>
       {children}
     </section>
   )

@@ -1,14 +1,13 @@
 import { brand } from "../../config/brand"
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import { Globe } from "lucide-react"
 import { Link, useLocation } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 
 const Navbar = () => {
+
   const [isOpen, setIsOpen] = useState(false)
-  const [isNavVisible, setIsNavVisible] = useState(true)
   const [activeSection, setActiveSection] = useState("hero")
-  const lastScrollY = useRef(0)
   const location = useLocation()
   const { t, i18n } = useTranslation()
 
@@ -23,33 +22,7 @@ const Navbar = () => {
   }, [i18n.language])
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentY = window.scrollY
 
-      if (isOpen || currentY <= 8) {
-        setIsNavVisible(true)
-        lastScrollY.current = currentY
-        return
-      }
-
-      const delta = currentY - lastScrollY.current
-
-      if (Math.abs(delta) < 8) return
-
-      if (delta > 0 && currentY > 60) {
-        setIsNavVisible(false)
-      } else {
-        setIsNavVisible(true)
-      }
-
-      lastScrollY.current = currentY
-    }
-
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [isOpen])
-
-  useEffect(() => {
     if (location.pathname !== "/") {
       setActiveSection("")
       return
@@ -70,6 +43,7 @@ const Navbar = () => {
         const el = document.getElementById(id)
         if (!el) return
         const rect = el.getBoundingClientRect()
+
         if (rect.top <= 140 && rect.bottom >= 140) {
           current = id
         }
@@ -88,26 +62,33 @@ const Navbar = () => {
       window.removeEventListener("hashchange", updateActiveFromHash)
       window.removeEventListener("scroll", updateActiveOnScroll)
     }
+
   }, [location.pathname])
 
-  const isHomeActive = location.pathname === "/" && activeSection === "hero"
-  const isServicesActive = location.pathname === "/" && activeSection === "services"
-  const isPoliciesActive = location.pathname === "/policies"
-  const activeClass = "text-[var(--color-primary)] font-semibold"
-  const inactiveClass = "text-[#3A3A3A]"
+  const isHomeActive =
+    location.pathname === "/" && activeSection === "hero"
+
+  const isServicesActive =
+    location.pathname === "/" && activeSection === "services"
+
+  const isPoliciesActive =
+    location.pathname === "/policies"
+
+  const activeClass =
+    "text-[var(--color-primary)] font-semibold"
+
+  const inactiveClass =
+    "text-[#3A3A3A]"
 
   return (
-    <>
-    <nav
-      className={`fixed top-0 left-0 z-[9999] w-full bg-[var(--color-navbar)] border-b border-[var(--color-primary)] transition-transform duration-300 ${
-        isNavVisible ? "translate-y-0" : "-translate-y-full"
-      }`}
-    >
+
+    <nav className="w-full bg-[var(--color-navbar)] border-b border-[var(--color-primary)]">
 
       <div className="max-w-screen-xl mx-auto px-6 py-6 flex items-center justify-between">
 
         {/* LEFT — LOGO */}
         <div className="flex items-center gap-4">
+
           <img
             src={brand.logo.value}
             alt={brand.name}
@@ -115,13 +96,17 @@ const Navbar = () => {
           />
 
           <div className="leading-tight">
+
             <h1 className="text-[26px] tracking-[0.3em] text-[var(--color-primary)] font-light">
               {brand.name}
             </h1>
+
             <p className="text-[10px] tracking-[0.5em] text-[var(--color-primary)]">
               {brand.subName}
             </p>
+
           </div>
+
         </div>
 
         {/* RIGHT DESKTOP */}
@@ -166,6 +151,7 @@ const Navbar = () => {
 
         {/* MOBILE BUTTON */}
         <div className="md:hidden flex items-center gap-3">
+
           <button
             aria-label="Toggle language"
             className="p-1"
@@ -180,23 +166,34 @@ const Navbar = () => {
           >
             {isOpen ? "✕" : "☰"}
           </button>
+
         </div>
 
       </div>
 
       {/* MOBILE MENU */}
       {isOpen && (
+
         <div className="md:hidden px-6 pb-6 flex flex-col gap-5 text-sm font-medium bg-[var(--color-navbar)]">
 
-          <a href="/#hero" onClick={() => setIsOpen(false)}>
+          <a
+            href="/#hero"
+            onClick={() => setIsOpen(false)}
+          >
             {t("nav.home")}
           </a>
 
-          <a href="/#services" onClick={() => setIsOpen(false)}>
+          <a
+            href="/#services"
+            onClick={() => setIsOpen(false)}
+          >
             {t("nav.services")}
           </a>
 
-          <Link to="/policies" onClick={() => setIsOpen(false)}>
+          <Link
+            to="/policies"
+            onClick={() => setIsOpen(false)}
+          >
             {t("nav.policies")}
           </Link>
 
@@ -210,10 +207,11 @@ const Navbar = () => {
           </a>
 
         </div>
+
       )}
+
     </nav>
-    <div className="h-[97px]" />
-    </>
+
   )
 }
 

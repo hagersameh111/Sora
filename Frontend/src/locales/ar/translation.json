@@ -40,13 +40,10 @@
   },
 
   "visit": {
-    "title": "زورينا",
+    "title": "زورونا",
     "locationLabel": "الموقع",
     "address": [
-      "180 Old Loudon Road",
-      "Latham, NY 12110",
-      "United States"
-    ],
+   "180  Old Loudon Road Latham, NY 12110 United States"    ],
     "contacts": {
       "reservation": {
         "title": "بالحجز المسبق فقط",

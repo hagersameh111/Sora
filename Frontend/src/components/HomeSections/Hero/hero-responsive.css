@@ -15,8 +15,8 @@ pointer-events:none;
 
 /* smooth vertical spacing */
 .hero-inner{
-padding-top:clamp(90px,10vw,140px);
-padding-bottom:clamp(80px,10vw,130px);
+padding-top:clamp(80px,10vw,130px);
+padding-bottom:clamp(70px,10vw,120px);
 }
 
 .hero-grid{

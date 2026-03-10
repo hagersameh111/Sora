@@ -7,7 +7,9 @@ import AddReview from "./AddReview"
 import "./reviews-mobile.css"
 
 const Reviews = () => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const isRTL = i18n.language === "ar"
+
   const reviewsData = brand.data.reviews
 
   const [reviews, setReviews] = useState([])
@@ -28,6 +30,7 @@ const Reviews = () => {
         const response = await fetch(apiUrl("/api/reviews/"))
         if (!response.ok) throw new Error("Failed to fetch reviews")
         const data = await response.json()
+
         if (Array.isArray(data) && data.length > 0) {
           setReviews(data)
         } else {
@@ -64,8 +67,7 @@ const Reviews = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
           {/* LEFT */}
-          <div className="text-center lg:text-left">
-            <h2 className="text-4xl sm:text-5xl lg:text-[86px] leading-[1.05] lg:leading-[0.95] font-semibold text-[var(--color-primary-soft)] mb-8 lg:mb-12 whitespace-pre-line">
+<div className={`text-center ${isRTL ? "lg:text-right lg:mr-0 lg:ml-auto" : "lg:text-left"}`}>            <h2 className="text-4xl sm:text-5xl lg:text-[86px] leading-[1.05] lg:leading-[0.95] font-semibold text-[var(--color-primary-soft)] mb-8 lg:mb-12 whitespace-pre-line">
               {t("reviews.title")}
             </h2>
 
@@ -87,25 +89,22 @@ const Reviews = () => {
             {/* MOBILE + TABLET */}
             <div className="reviews-mobile-wrapper relative w-full lg:hidden">
 
-              {/* background image */}
               <img
                 src={reviewsData.backgroundImage}
                 alt=""
                 className="reviews-mobile-bg w-full object-cover rounded-[30px]"
               />
 
-              {/* overlay reviews */}
               <div className="reviews-mobile-overlay absolute inset-0 flex flex-col justify-center">
 
-                <ReviewCard review={firstReview} />
-
-                <ReviewCard review={secondReview} />
+                <ReviewCard review={firstReview} isRTL={isRTL} />
+                <ReviewCard review={secondReview} isRTL={isRTL} />
 
               </div>
 
             </div>
 
-            {/* DESKTOP ORIGINAL */}
+            {/* DESKTOP */}
             <div className="hidden lg:block relative w-[520px] h-[800px]">
 
               <img
@@ -118,12 +117,14 @@ const Reviews = () => {
                 review={firstReview}
                 position="top"
                 setPaused={setPaused}
+                isRTL={isRTL}
               />
 
               <ReviewCard
                 review={secondReview}
                 position="bottom"
                 setPaused={setPaused}
+                isRTL={isRTL}
               />
 
             </div>
@@ -136,12 +137,14 @@ const Reviews = () => {
 
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
+
           <div
             className="absolute inset-0 bg-black/40 backdrop-blur-sm"
             onClick={() => setIsModalOpen(false)}
           />
 
           <div className="relative bg-white p-6 sm:p-10 rounded-3xl w-[500px] max-w-[90%] z-10 shadow-2xl">
+
             <button
               onClick={() => setIsModalOpen(false)}
               className="absolute top-4 right-4 text-gray-500 hover:text-black"
@@ -154,14 +157,16 @@ const Reviews = () => {
             </h3>
 
             <AddReview onSuccess={() => setIsModalOpen(false)} />
+
           </div>
+
         </div>
       )}
     </section>
   )
 }
 
-const ReviewCard = ({ review, position, setPaused }) => {
+const ReviewCard = ({ review, position, setPaused, isRTL }) => {
 
   const positionStyles =
     position === "top"
@@ -172,7 +177,7 @@ const ReviewCard = ({ review, position, setPaused }) => {
     <div
       onMouseEnter={() => setPaused?.(true)}
       onMouseLeave={() => setPaused?.(false)}
-      className={`${position ? positionStyles : ""}
+      className={`${position ? positionStyles : ""} ${isRTL ? "text-right" : "text-left"}
       review-card
       w-full lg:w-[650px]
       bg-[#5A4A43]/60
@@ -185,12 +190,11 @@ const ReviewCard = ({ review, position, setPaused }) => {
       hover:scale-105`}
     >
 
-      <h4 className="text-xl lg:text-2xl font-semibold mb-4 lg:mb-6">
+     <h4 className={`text-xl lg:text-2xl font-semibold mb-4 lg:mb-6 ${isRTL ? "text-right" : ""}`}>
         {review.name}
       </h4>
 
-      <p className="text-sm sm:text-base leading-relaxed mb-2 lg:mb-8">
-        {review.content}
+<p className={`text-sm sm:text-base leading-relaxed mb-2 lg:mb-8 ${isRTL ? "text-right" : ""}`}>        {review.content}
       </p>
 
       <div className="flex justify-center gap-4 lg:gap-6 text-xl lg:text-2xl">
